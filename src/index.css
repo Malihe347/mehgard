@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-card: #637545;
+  --color-bg-main: #455230;
+  --color-green: #637545;
+  --color-green-dark: #455230;
+  --color-green-soft: #9BA685;
+  --color-sage: #9BA685;
+  --color-cat-mobile: #9BA6A5;
+}
+
+:root {
+  color-scheme: dark;
+  --page-gutter: clamp(1rem, 3vw, 2.5rem);
+  --page-bg: #fbfdf818;
+  --card-bg: #637545;
+  --font-heading: 'Playfair Display', 'Lora', Georgia, serif;
+  --font-body: 'Inter', system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #455230;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: transparent;
+  color: #e5e7eb;
+}
+
+@media (min-width: 640px) {
+  body {
+    margin: 20px;
+  }
+}
+
+#root {
+  min-height: 100svh;
+}
+
+.page-container {
+  width: min(100%, 92rem);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+@media (min-width: 768px) and (max-width: 768px) {
+  .aspect-square {
+    aspect-ratio: 1 / 1 !important;
+  }
+}
+
+@keyframes lastminute-marquee {
+  from { transform: translateX(-10%); }
+  to { transform: translateX(110%); }
+}
+@keyframes lastminute-glow {
+  0%, 100% { text-shadow: 0 0 8px rgba(255,255,255,.85), 0 0 22px rgba(255,215,0,.9); }
+  50% { text-shadow: 0 0 14px rgba(255,255,255,1), 0 0 34px rgba(255,105,180,.9); }
+}
+@keyframes lastminute-bob {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-8px) rotate(6deg); }
+}
+.lastminute-marquee { animation: lastminute-marquee 9s linear infinite; }
+.lastminute-glow { animation: lastminute-glow 2.4s ease-in-out infinite; }
+.lastminute-bob { animation: lastminute-bob 1.8s ease-in-out infinite; }
